@@ -1,0 +1,414 @@
+/* ==========================
+   VIJJU COOKING
+   Dark Cinematic Chef Style
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --gold:#f6b000;
+    --dark:#0b0b0b;
+    --dark2:#171717;
+    --white:#ffffff;
+    --gray:#cfcfcf;
+}
+
+body{
+    background:var(--dark);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* ==========================
+   LOADER
+========================== */
+
+#loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:1s ease;
+}
+
+.logo-animation{
+    text-align:center;
+}
+
+.logo-animation h1{
+    font-size:4rem;
+    color:var(--gold);
+    letter-spacing:4px;
+    text-shadow:0 0 15px rgba(246,176,0,.7);
+    animation:glow 2s infinite alternate;
+}
+
+.logo-animation p{
+    margin-top:10px;
+    color:#ddd;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px rgba(246,176,0,.6);
+    }
+    to{
+        text-shadow:
+        0 0 20px rgba(246,176,0,.8),
+        0 0 40px rgba(246,176,0,.8);
+    }
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.75)
+    ),
+    url("assets/images/hero-kitchen.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 8%;
+
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    color:var(--gold);
+    font-size:1.8rem;
+    font-weight:800;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:var(--gold);
+}
+
+/* ==========================
+   HERO CONTENT
+========================== */
+
+.hero-content{
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:5rem;
+    color:var(--gold);
+
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    max-width:700px;
+    color:#ddd;
+    font-size:1.1rem;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.buttons{
+    margin-top:35px;
+
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border-radius:50px;
+
+    text-decoration:none;
+    font-weight:600;
+
+    transition:.4s;
+}
+
+.primary{
+    background:var(--gold);
+    color:black;
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px rgba(246,176,0,.8);
+}
+
+.secondary{
+    border:2px solid var(--gold);
+    color:white;
+}
+
+.secondary:hover{
+    background:var(--gold);
+    color:black;
+}
+
+/* ==========================
+   SECTION COMMON
+========================== */
+
+section{
+    padding:100px 8%;
+}
+
+section h2{
+    text-align:center;
+    color:var(--gold);
+    margin-bottom:50px;
+    font-size:2.5rem;
+}
+
+/* ==========================
+   RECIPE CARDS
+========================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.card{
+    background:var(--dark2);
+
+    border-radius:20px;
+    overflow:hidden;
+
+    transition:.4s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 25px rgba(246,176,0,.35);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:20px;
+    text-align:center;
+}
+
+/* ==========================
+   VIDEOS
+========================== */
+
+.video-box{
+    display:flex;
+    justify-content:center;
+}
+
+.video-box iframe{
+    width:100%;
+    max-width:1000px;
+    height:550px;
+
+    border:none;
+    border-radius:20px;
+
+    box-shadow:
+    0 0 30px rgba(246,176,0,.25);
+}
+
+/* ==========================
+   ABOUT
+========================== */
+
+#about{
+    text-align:center;
+}
+
+#about p{
+    max-width:800px;
+    margin:auto;
+
+    color:#ddd;
+    line-height:1.8;
+}
+
+.insta-btn{
+    display:inline-block;
+
+    margin-top:30px;
+
+    background:var(--gold);
+    color:black;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+    font-weight:700;
+
+    transition:.4s;
+}
+
+.insta-btn:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 25px rgba(246,176,0,.8);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    text-align:center;
+
+    padding:40px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    background:#080808;
+}
+
+footer h3{
+    color:var(--gold);
+    margin-bottom:10px;
+}
+
+/* ==========================
+   SCROLL ANIMATION
+========================== */
+
+.card,
+.hero-content,
+.video-box,
+#about{
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+    .logo-animation h1{
+        font-size:2.5rem;
+    }
+
+    .video-box iframe{
+        height:300px;
+    }
+
+    section{
+        padding:70px 6%;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero-content h1{
+        font-size:2.3rem;
+    }
+
+    .hero-content p{
+        font-size:.95rem;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+}
